@@ -1,0 +1,64 @@
+afficher les dbs
+show databases;
+
+creation de db
+CREATE DATABASE <database_name>;
+CREATE DATABASE soap_store;
+
+utiliser une db
+USE <database-name>;
+
+supprimer une db
+DROP DATABASE <database-name>;
+
+CREATE DATABASE test_db_2 CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+
+creation de table
+CREATE TABLE cats (
+    name VARCHAR(50),
+    age INT
+);
+CREATE TABLE dogs (
+    name VARCHAR(50),
+    breed VARCHAR(50),
+    age INT
+);
+
+ou 
+
+CREATE TABLE IF NOT EXISTS cats (
+    name VARCHAR(50),
+    age INT
+);
+CREATE TABLE IF NOT EXISTS dogs (
+    name VARCHAR(50),
+    breed VARCHAR(50),
+    age INT
+);
+
+affichage
+SHOW tables;
+SHOW COLUMNS FROM cats;
+DESC cats;
+
+supprimer de tables
+DROP TABLE <table-name>;
+DROP TABLE cats;
+
+exemple
+creationde table
+CREATE TABLE products
+  (
+    name VARCHAR(50),
+    quantity INT
+  );
+  
+afficher la table
+SHOW TABLES;
+
+afficher le detail de la table
+DESC products;
+
+supprimer la table
+DROP TABLE products;

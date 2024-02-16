@@ -1,0 +1,129 @@
+schema: CREATE, SHOW, ALTER, DROP
+data: INSERT, SELECT, UPDATE, DELETE
+
+
+CREATE TABLE cats (
+    name VARCHAR(50),
+    age INT
+);
+
+insertion des données
+INSERT INTO cats (name, age) 
+VALUES ('Blue Steele', 5);
+INSERT INTO cats (name, age) 
+VALUES ('Jenkins', 7);
+
+afficher les lignes
+SELECT * FROM cats;
+
+une seule insertion
+INSERT INTO cats (age, name) 
+VALUES (2, 'Beth');
+
+plusiers insertions
+INSERT INTO cats (name, age) 
+VALUES 
+  ('Meatball', 5), 
+  ('Turkey', 1), 
+  ('orange', 15);
+  
+  
+exemple
+CREATE TABLE people
+  (
+    first_name VARCHAR(20),
+    last_name VARCHAR(20),
+    age INT
+  );
+  
+INSERT INTO people(first_name, last_name, age)
+VALUES ('Amin', 'amrani', 13);
+
+INSERT INTO people(age, last_name, first_name)
+VALUES (42, 'Dahmani', 'dehmane');
+
+INSERT INTO people(first_name, last_name, age)
+VALUES
+    ('Linda', 'dahmni', 45),
+    ('brahim', 'Brahimi', 38),
+    ('yasine', 'Slimani', 70);  
+
+DROP TABLE people;
+
+SELECT * FROM people;
+
+SHOW TABLES;
+
+
+utilisation NOT NULL:
+CREATE TABLE cats2 (
+    name VARCHAR(100) NOT NULL,
+    age INT NOT NULL
+);
+
+
+DEFAULT name:
+CREATE TABLE cats3  (    
+    name VARCHAR(20) DEFAULT 'no name provided',    
+    age INT DEFAULT 99  
+);
+
+DESC cats3;
+
+INSERT INTO cats3(age) VALUES(13);
+
+INSERT INTO cats3() VALUES();
+
+CREATE TABLE cats4  (    
+    name VARCHAR(20) NOT NULL DEFAULT 'unnamed',    
+    age INT NOT NULL DEFAULT 99 
+);
+
+
+clé primaire:
+CREATE TABLE unique_cats (
+	cat_id INT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    age INT NOT NULL
+);
+
+ou:
+CREATE TABLE unique_cats2 (
+	cat_id INT,
+    name VARCHAR(100) NOT NULL,
+    age INT NOT NULL,
+    PRIMARY KEY (cat_id)
+);
+
+
+AUTO_INCREMENT
+CREATE TABLE unique_cats3 (
+    cat_id INT AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    age INT NOT NULL,
+    PRIMARY KEY (cat_id)
+);
+
+
+exemple
+CREATE TABLE employees (
+    id INT AUTO_INCREMENT,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    middle_name VARCHAR(255),
+    age INT NOT NULL,
+    current_status VARCHAR(255) NOT NULL DEFAULT 'employed',
+    PRIMARY KEY(id)
+);
+ou
+CREATE TABLE employees (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    middle_name VARCHAR(255),
+    age INT NOT NULL,
+    current_status VARCHAR(255) NOT NULL DEFAULT 'employed'
+);
+
+INSERT INTO employees(first_name, last_name, age) VALUES
+('Nadia', 'Dahmoun', 58);
